@@ -128,6 +128,12 @@ public class GameModel {
     public int getGameScore() {
         return gameScore;
     }
+    
+    //method: getRandomWord
+    //purpose: return random word
+    public String getRandomWord() {
+        return randomWord;
+    }
 
     //method: setGameScore
     //purpose: set current game score
