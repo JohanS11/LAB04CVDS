@@ -75,11 +75,12 @@ public class GameModel {
         }
         if(positions.size() == 0){
             incorrectCount++;
-            gameScore -= 10;
+            
             
         } else {
             correctCount += positions.size();
         }
+        this.setScore(inyectado.calculateScore(correctCount, incorrectCount));
         return positions;
         
     }

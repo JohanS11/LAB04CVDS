@@ -51,10 +51,10 @@ public class GameScoreTest {
 	@Test
 	public void PowerBonusCase() {
 		GameScore juego = new PowerScore();
-		Assert.assertEquals(juego.calculateScore(6, 3), 19506);
+		Assert.assertEquals(juego.calculateScore(6, 3), 500);
 		Assert.assertEquals(juego.calculateScore(0, 10), 0);
 		Assert.assertEquals(juego.calculateScore(3, 11), 67);
-		Assert.assertEquals(juego.calculateScore(5, 9), 3833);
+		Assert.assertEquals(juego.calculateScore(5, 9), 500);
 	}
 
 }

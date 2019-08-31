@@ -14,7 +14,16 @@ public class PowerScore implements GameScore {
 	 */
 	public int calculateScore(int correctCount, int incorrectCount) {
 		int cuentaTotal = 0;
-		return 0;
+		for (int i = 1; i<=correctCount;i++) {
+			cuentaTotal+=Math.pow(5.0, (double) i);
+		}
+		cuentaTotal-= incorrectCount*8;
+		if (cuentaTotal <= 0 ) {
+			cuentaTotal = 0;
+		} else if (cuentaTotal >= 500) {
+			cuentaTotal = 500;
+		}
+		return cuentaTotal;
 	}
 
 }
