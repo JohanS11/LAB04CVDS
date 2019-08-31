@@ -24,6 +24,7 @@ public class GameModel {
     private LocalDateTime dateTime;
     private int gameScore;
     private int[] lettersUsed;
+    private GameScore inyectado;
     
     
     private HangmanDictionary dictionary;
@@ -66,7 +67,7 @@ public class GameModel {
     // list of positions if character is found in string
     public ArrayList<Integer> makeGuess(String guess){
         char guessChar = guess.charAt(0);
-        ArrayList<Integer> positions = new ArrayList<>();
+        ArrayList<Integer> positions = new ArrayList<Integer>();
         for(int i = 0; i < randomWordCharArray.length; i++){
             if(randomWordCharArray[i] == guessChar){
                 positions.add(i);
@@ -75,6 +76,7 @@ public class GameModel {
         if(positions.size() == 0){
             incorrectCount++;
             gameScore -= 10;
+            
         } else {
             correctCount += positions.size();
         }
