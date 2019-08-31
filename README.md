@@ -3,7 +3,10 @@
 ### Procesos de Desarrollo de Software
 
 ### Desarrollo Dirigido por Pruebas + DIP + DI + Contenedores Livianos
+INTEGRANTES:
 
+- Johan "El negro" Arias
+- Orlando "El coste" Gelves
 
 Para este taller se va a trabajar sobre el juego del ahorcado.
 
