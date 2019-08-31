@@ -22,12 +22,12 @@ import junit.framework.Assert;
  *		Si acertó 6 veces y fallo 3 veces debería tener 45 puntos
  *		Si acertó 0 veces y fallo 10 veces debería tener 0 puntos
  *		Si acertó 3 veces y fallo 11 veces debería tener 0 puntos
- *		Si acertó 5 veces y fallo 9 veces debería tener 100 puntos
+ *		Si acertó 5 veces y fallo 9 veces debería tener 5 puntos
  * PowerBonusCase:
- *		Si acertó 6 veces y fallo 3 veces debería tener 45 puntos
+ *		Si acertó 6 veces y fallo 3 veces debería tener 19506 puntos
  *		Si acertó 0 veces y fallo 10 veces debería tener 0 puntos
- *		Si acertó 3 veces y fallo 11 veces debería tener 0 puntos
- *		Si acertó 5 veces y fallo 9 veces debería tener 100 puntos
+ *		Si acertó 3 veces y fallo 11 veces debería tener 67 puntos
+ *		Si acertó 5 veces y fallo 9 veces debería tener 3833 puntos
  */
 public class GameScoreTest {
 
@@ -46,15 +46,15 @@ public class GameScoreTest {
 		Assert.assertEquals(juego.calculateScore(6, 3), 45);
 		Assert.assertEquals(juego.calculateScore(0, 10), 0);
 		Assert.assertEquals(juego.calculateScore(3, 11), 0);
-		Assert.assertEquals(juego.calculateScore(5, 9), 100);
+		Assert.assertEquals(juego.calculateScore(5, 9), 5);
 	}
 	@Test
 	public void PowerBonusCase() {
 		GameScore juego = new PowerScore();
-		Assert.assertEquals(juego.calculateScore(6, 3), 60);
+		Assert.assertEquals(juego.calculateScore(6, 3), 19506);
 		Assert.assertEquals(juego.calculateScore(0, 10), 0);
-		Assert.assertEquals(juego.calculateScore(3, 11), 0);
-		Assert.assertEquals(juego.calculateScore(5, 9), 100);
+		Assert.assertEquals(juego.calculateScore(3, 11), 67);
+		Assert.assertEquals(juego.calculateScore(5, 9), 3833);
 	}
 
 }
