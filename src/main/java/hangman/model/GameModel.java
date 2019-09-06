@@ -43,7 +43,12 @@ public class GameModel {
         incorrectCount = 0;
         correctCount = 0;
         inyectado = g;
-        gameScore = inyectado.calculateScore(0, 0);
+        try {
+			gameScore = inyectado.calculateScore(0, 0);
+		} catch (GameScoreException e) {
+			// TODO Auto-generated catch block
+			setGameScore(0);
+		}
       
         
     }
@@ -55,7 +60,12 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = inyectado.calculateScore(0, 0);
+        try {
+			gameScore = inyectado.calculateScore(0, 0);
+		} catch (GameScoreException e) {
+			// TODO Auto-generated catch block
+			setGameScore(0);
+		}
     }
 
     //setDateTime
@@ -82,7 +92,12 @@ public class GameModel {
         } else {
             correctCount += positions.size();
         }
-        this.setScore(inyectado.calculateScore(correctCount, incorrectCount));
+        try {
+			this.setScore(inyectado.calculateScore(correctCount, incorrectCount));
+		} catch (GameScoreException e) {
+			// TODO Auto-generated catch block
+			setGameScore(0);
+		}
         return positions;
         
     }

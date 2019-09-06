@@ -12,10 +12,10 @@ public class BonusScore implements GameScore {
 	 * @pos Se penaliza con 5 puntos cada letra incorrecta
 	 * @return int es el puntaje total obtenido por el usuario con los valores especificados
 	 */
-	public int calculateScore(int correctCount, int incorrectCount) {
+	public int calculateScore(int correctCount, int incorrectCount) throws GameScoreException {
 		int cuentaTotal = correctCount*10-incorrectCount*5;
 		if (cuentaTotal <= 0) {
-			cuentaTotal = 0;
+			throw new GameScoreException(GameScoreException.NUMEROS_NO_PUEDEN_SER_NEGATIVOS);
 		}
 		
 		return cuentaTotal;

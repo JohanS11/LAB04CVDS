@@ -32,7 +32,7 @@ import junit.framework.Assert;
 public class GameScoreTest {
 
 	@Test
-	public void OriginalCase() {
+	public void OriginalCase() throws GameScoreException {
 		GameScore juego = new OriginalScore();
 		Assert.assertEquals(juego.calculateScore(3, 4), 60);
 		Assert.assertEquals(juego.calculateScore(2, 10), 0);
@@ -41,7 +41,7 @@ public class GameScoreTest {
 	}
 	
 	@Test
-	public void BonusCase() {
+	public void BonusCase() throws GameScoreException {
 		GameScore juego = new BonusScore();
 		Assert.assertEquals(juego.calculateScore(6, 3), 45);
 		Assert.assertEquals(juego.calculateScore(0, 10), 0);
@@ -49,7 +49,7 @@ public class GameScoreTest {
 		Assert.assertEquals(juego.calculateScore(5, 9), 5);
 	}
 	@Test
-	public void PowerBonusCase() {
+	public void PowerBonusCase() throws GameScoreException {
 		GameScore juego = new PowerScore();
 		Assert.assertEquals(juego.calculateScore(6, 3), 500);
 		Assert.assertEquals(juego.calculateScore(0, 10), 0);

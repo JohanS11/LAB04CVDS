@@ -12,14 +12,14 @@ public class PowerScore implements GameScore {
 	 * @pos Se penaliza con 8 puntos cada letra incorrecta. 
 	 * @return int es el puntaje total obtenido por el usuario con los valores especificados
 	 */
-	public int calculateScore(int correctCount, int incorrectCount) {
+	public int calculateScore(int correctCount, int incorrectCount) throws GameScoreException {
 		int cuentaTotal = 0;
 		for (int i = 1; i<=correctCount;i++) {
 			cuentaTotal+=Math.pow(5.0, (double) i);
 		}
 		cuentaTotal-= incorrectCount*8;
 		if (cuentaTotal <= 0 ) {
-			cuentaTotal = 0;
+			throw new GameScoreException(GameScoreException.NUMEROS_NO_PUEDEN_SER_NEGATIVOS);
 		} else if (cuentaTotal >= 500) {
 			cuentaTotal = 500;
 		}
