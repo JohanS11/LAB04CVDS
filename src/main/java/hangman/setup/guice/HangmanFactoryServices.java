@@ -13,8 +13,7 @@ package hangman.setup.guice;
 import hangman.model.French;
 import hangman.model.*;
 import hangman.model.Language;
-import hangman.model.dictionary.HangmanDictionary;
-import hangman.model.dictionary.FrenchDictionaryDataSource;
+import hangman.model.dictionary.*;
 import hangman.view.HangmanNoviolentoPanel;
 import hangman.view.HangmanPanel;
 
@@ -25,9 +24,9 @@ public class HangmanFactoryServices extends com.google.inject.AbstractModule {
         /* Guice dependency injection */
         // bind(Interface.class).to(Concrete.class);
     	
-    	bind(GameScore.class).to(OriginalScore.class);
-    	bind(Language.class).to(French.class);
-    	bind(HangmanDictionary.class).to(FrenchDictionaryDataSource.class);
+    	bind(GameScore.class).to(PowerScore.class);
+    	bind(Language.class).to(English.class);
+    	bind(HangmanDictionary.class).to(EnglishDictionaryDataSource.class);
     	bind(HangmanPanel.class).to(HangmanNoviolentoPanel.class);
     }
 
